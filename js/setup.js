@@ -11,13 +11,13 @@ goog.require('goog.ui.ac');
 Anandhu.timezone.prototype.autocomplete = function(){
 	this.matcher = new goog.ui.AutoComplete.ArrayMatcher(Anandhu.timezone.places, false);
 	this.renderer = new goog.ui.AutoComplete.Renderer();
-	this.inputhandler =
-		new goog.ui.AutoComplete.InputHandler(null, null, false);
+	this.inputhandler = new goog.ui.AutoComplete.InputHandler(null, null, false);
 
 	this.tzOffsetAutocomplete = new goog.ui.AutoComplete(this.matcher, this.renderer, this.inputhandler);
 
 	this.inputhandler.attachAutoComplete(this.tzOffsetAutocomplete);
 	this.inputhandler.attachInputs(this.tzOffset.el);
+	
 	//var first = goog.ui.ac.createSimpleAutoComplete(places, document.getElementById('origin_zone'), false);
     //var second = goog.ui.ac.createSimpleAutoComplete(places, document.getElementById('origin_zone'), true);
 }
